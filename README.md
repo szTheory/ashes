@@ -72,6 +72,7 @@ Schema entries should be of the form `name:type` with types being defined by ect
 
 ###Migrations
 **Assumes a valid repo module name of MyApp.Repo**
+
 Generates an [Ecto](https://github.com/elixir-lang/ecto) migration with the given name. **Requires ecto**
 ```bash
 $ mix ashes.generate migration <migrationname>
