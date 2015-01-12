@@ -33,7 +33,7 @@ Will give you the following methods by default:
 * `--skip-template`- doesn't create a folder for templates
 
 ###Channels
-Generates a channel with the given name.
+Generates a channel with the given name. **Don't forget to add the channel to your router**
 
 ```bash
 $ mix ashes.generate channel <channelname> [events]
@@ -57,4 +57,16 @@ def handle_in("eventname", message, socket) do
   {:ok, socket}
 end
 ```
+
+###Models
+Generates an [Ecto](https://github.com/elixir-lang/ecto) model with the given name and schema. **Requires ecto!**
+
+```bash
+$ mix ashes.generate model <modelname> [schema entries]
+```
+
+Schema entries should be of the form `name:type` with types being defined by ecto. 
+
+**Options**
+* `--timestamps` - adds a `created_at` and `updated_at` field to the schema along with some plumbing to keep the fields up to date.
 
