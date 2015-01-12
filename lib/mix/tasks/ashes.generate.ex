@@ -89,7 +89,7 @@ defmodule Mix.Tasks.Ashes.Generate do
   end
 
   defp template_dir(type) do 
-    Application.app_dir(:phoenix, "templates/#{type}")
+    "#{Mix.Project.deps_path}/ashes/templates/#{type}"
   end
 
   defp insert_channel(name, module) do
