@@ -1,0 +1,2 @@
+defmodule Ashes do
+end
