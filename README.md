@@ -70,3 +70,10 @@ Schema entries should be of the form `name:type` with types being defined by ect
 **Options**
 * `--timestamps` - adds a `created_at` and `updated_at` field to the schema along with some plumbing to keep the fields up to date.
 
+###Migrations
+**Assumes a valid repo module name of MyApp.Repo**
+Generates an [Ecto](https://github.com/elixir-lang/ecto) migration with the given name. **Requires ecto**
+```bash
+$ mix ashes.generate migration <migrationname>
+```
+
