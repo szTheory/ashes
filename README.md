@@ -9,7 +9,7 @@ end
 ```
 
 ###Controllers
-Generatse a controller with a given name, will also generate a view and create a folder
+Generates a controller with a given name, will also generate a view and create a folder
 for you to put related .eex templates in. **Don't forget to add the controller in `routes.ex`**
 
 ```bash
