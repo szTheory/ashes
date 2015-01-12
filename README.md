@@ -2,6 +2,12 @@
 
 A code generation tool for the [Phoenix](http://www.phoenixwebframework.com) web framework.
 
+```elixir
+defp deps do
+  [{:ashes, ">= 0.0.1"}]
+end
+```
+
 ###Controllers
 Generatse a controller with a given name, will also generate a view and create a folder
 for you to put related .eex templates in. **Don't forget to add the controller in `routes.ex`**
