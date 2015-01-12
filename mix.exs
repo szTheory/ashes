@@ -5,6 +5,9 @@ defmodule Ashes.Mixfile do
     [app: :ashes,
      version: "0.0.1",
      elixir: "~> 1.0",
+     description: "A code generation tool for the phoenix web framework",
+     source_url: "https://github.com/nickgartmann/ashes",
+     package: package,
      deps: deps]
   end
 
@@ -26,4 +29,13 @@ defmodule Ashes.Mixfile do
   # Type `mix help deps` for more examples and options
   defp deps do
     [] end
+
+  defp package do
+    [
+      files: ["lib", "templates", "mix.exs", "README*", "LICENSE*"],
+      contributors: ["Nick Gartmann"],
+      licenses: ["MIT"],
+      links: %{"GitHub" => "https://github.com/nickgartmann/ashes"}
+    ]
+  end
 end
