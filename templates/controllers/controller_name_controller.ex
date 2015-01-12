@@ -13,7 +13,7 @@ defmodule <%= application_name %>.<%= controller_name %> do
   end
 
   # GET /<%= controller %>/new
-  def edit(conn, _params) do
+  def new(conn, _params) do
   end
   <% end %>
 
