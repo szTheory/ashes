@@ -115,3 +115,11 @@ defmodule Mix.Tasks.Ashes.Generate do
   end
 end
 
+
+defmodule Mix.Tasks.Ashes.G do
+  def run(args), do: Mix.Tasks.Ashes.Generate.run(args)
+end
+
+defmodule Mix.Tasks.Ashes.Gen do
+  def run(args), do: Mix.Tasks.Ashes.Generate.run(args)
+end

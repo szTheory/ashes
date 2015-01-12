@@ -1,4 +1,4 @@
 Ashes
 =====
 
-** TODO: Add description **
+A code generation tool for the [Phoenix](http://www.phoenixwebframework.com) web framework.
