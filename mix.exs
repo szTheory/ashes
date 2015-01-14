@@ -28,7 +28,11 @@ defmodule Ashes.Mixfile do
   #
   # Type `mix help deps` for more examples and options
   defp deps do
-    [] end
+    [
+      {:phoenix, ">= 0.8.0", only: :test},
+      {:cowboy, ">= 1.0.0", only: :test}
+    ]
+  end
 
   defp package do
     [
