@@ -17,13 +17,16 @@ $ mix ashes.generate controller <controllername>
 ```
 
 ```elixir
-# routes.ex
+# web/router.ex
 defmodule MyApp.Router do
-  resource "/my", MyController
+  ...
+  scope "/", MyApp do
+    resources "/my", MyController
+  end
 end
 ```
 
-Will give you the following methods by default:
+Will give you the following functions by default:
 
 * index
 * edit
@@ -34,7 +37,7 @@ Will give you the following methods by default:
 * delete
 
 **Options**
-* `--skip-form` - removes the `edit` and `new` methods from the controller (likely used for APIs)
+* `--skip-form` - removes the `edit` and `new` functions from the controller (likely used for APIs)
 * `--skip-view` - doesn't create a view module
 * `--skip-template`- doesn't create a folder for templates
 
@@ -46,15 +49,16 @@ $ mix ashes.generate channel <channelname> [events]
 ```
 ```elixir
 # routes.ex
-defmodule MyApp.Routes do
+defmodule MyApp.Router do
+  ...
   socket "/ws", MyApp do
     channel "my:*", MyChannel
   end
 end
 ```
 
-Will give you the following methods by default:
-* `join(_topic, socket)`
+Will give you the following functions by default:
+* `join(_topic, message, socket)`
 * `leave(_reason, socket)`
 
 If you provide events in the generate command, they will be added to the channel as
