@@ -3,7 +3,7 @@ defmodule Ashes.Mixfile do
 
   def project do
     [app: :ashes,
-     version: "0.0.2",
+     version: "0.0.3",
      elixir: "~> 1.0",
      description: "A code generation tool for the phoenix web framework",
      source_url: "https://github.com/nickgartmann/ashes",
