@@ -107,7 +107,7 @@ defmodule Mix.Tasks.Ashes.Generate do
 
       Make sure to add a channel in web/routes.ex
 
-        socket "/ws", #{application_name}
+        socket "/ws", #{application_name} do
           channel "#{name}", #{module}
         end
       """
