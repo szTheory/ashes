@@ -4,7 +4,7 @@ A code generation tool for the [Phoenix](http://www.phoenixwebframework.com) web
 
 ```elixir
 defp deps do
-  [{:ashes, ">= 0.0.1"}]
+  [{:ashes, ">= 0.0.3"}]
 end
 ```
 
