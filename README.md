@@ -78,7 +78,7 @@ $ mix ashes.generate model <modelname> [schema entries]
 Schema entries should be of the form `name:type` with types being defined by ecto. 
 
 **Options**
-* `--timestamps` - adds a `created_at` and `updated_at` field to the schema along with some plumbing to keep the fields up to date.
+* `--timestamps` - adds ecto timestamps to your schema.
 
 ###Migrations
 **Assumes a valid repo module name of MyApp.Repo**
