@@ -10,7 +10,7 @@ defmodule Mix.Tasks.Ashes.Generate do
 
   # Generate an ecto migration
   def migration(name) do
-    Mix.Tasks.Ecto.Gen.Migration.run(["#{application_name}.Repo", name])
+    Mix.Tasks.Ecto.Gen.Migration.run([name])
   end
   def migration(name, _, _), do: migration(name)
 
