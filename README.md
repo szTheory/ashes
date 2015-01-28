@@ -37,6 +37,10 @@ Will give you the following functions by default:
 * delete
 
 **Options**
+* `--template or --controller-template` - path to a different eex file to use as your template
+* `--filename or --controller-filename` - what to name your file, defaults to replacing the string `name` in the template filename
+* `--view-template` - path to a custom eex view file
+* `--view-filename` - filename to use for your view, defaults to replacing the string `name` in the template filename
 * `--skip-form` - removes the `edit` and `new` functions from the controller (likely used for APIs)
 * `--skip-view` - doesn't create a view module
 * `--skip-template`- doesn't create a folder for templates
@@ -68,6 +72,10 @@ def handle_in("eventname", message, socket) do
 end
 ```
 
+**Options**
+* `--template or --channel-template` - path to a different eex file to use as your template
+* `--filename or --channel-filename` - what to name your file, defaults to replacing the string `name` in the template filename
+
 ###Models
 Generates an [Ecto](https://github.com/elixir-lang/ecto) model with the given name and schema. **Requires ecto!**
 
@@ -79,6 +87,8 @@ Schema entries should be of the form `name:type` with types being defined by ect
 
 **Options**
 * `--timestamps` - adds ecto timestamps to your schema.
+* `--template or --model-template` - path to a different eex file to use as your template
+* `--filename or --channel-filename` - what to name your file, defaults to replacing the string `name` in the template file
 
 ###Migrations
 **Assumes a valid repo module name of MyApp.Repo**

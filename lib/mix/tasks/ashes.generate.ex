@@ -25,7 +25,9 @@ defmodule Mix.Tasks.Ashes.Generate do
                schema: schema,
                options: options]
 
-    copy_from template_dir("models"), "./web/models", {"model_name", model_name}, &EEx.eval_file(&1, binding)
+    source_path = Path.expand((options[:template] || options[:model_template] || Path.join(template_dir("models"), "name.ex")))
+    target_dir = "./web/models"
+    copy_from source_path, target_dir, (options[:filename] || {"name", model_name}), &EEx.eval_file(&1, binding)
   end
 
   # Generate a controller
@@ -37,9 +39,14 @@ defmodule Mix.Tasks.Ashes.Generate do
                controller_name: controller_name,
                options: options]
 
-    copy_from template_dir("controllers"), "./web/controllers", {"controller_name", controller_name}, &EEx.eval_file(&1, binding)
+    controller_source_path = Path.expand((options[:template] || options[:controller_template] || Path.join(template_dir("controllers"), "name_controller.ex")))
+    view_source_path = Path.expand((options[:view_template] || Path.join(template_dir("views"), "name_view.ex")))
+    controllers_dir = "./web/controllers"
+    views_dir = "./web/views"
+    copy_from controller_source_path, controllers_dir, (options[:filename] || options[:controller_filename] || {"name", controller_name}), &EEx.eval_file(&1, binding)
+
     if !options[:skip_view] do 
-      copy_from template_dir("views"), "./web/views", {"controller_name", controller_name }, &EEx.eval_file(&1, binding)
+      copy_from view_source_path, views_dir, (options[:view_filename] || {"name", controller_name }), &EEx.eval_file(&1, binding)
     end
     if !options[:skip_template] do 
       Mix.Generator.create_directory("./web/templates/#{name}")
@@ -73,7 +80,10 @@ defmodule Mix.Tasks.Ashes.Generate do
                events: events,
                options: options]
 
-    copy_from template_dir("channels"), "./web/channels", {"channel_name", channel_name}, &EEx.eval_file(&1, binding)
+    source_path = Path.expand((options[:template] || options[:channel_template] || Path.join(template_dir("channels"), "name_channel.ex")))
+    target_dir = "./web/channels"
+    copy_from source_path, target_dir, (options[:filename] || options[:channel_filename] || {"name", channel_name}), &EEx.eval_file(&1, binding)
+
     insert_channel name, "#{channel_name}Channel"
   end
 
