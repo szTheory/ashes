@@ -1,4 +1,4 @@
-#Ashes
+# Ashes
 
 A code generation tool for the [Phoenix](http://www.phoenixwebframework.com) web framework.
 
@@ -8,7 +8,7 @@ defp deps do
 end
 ```
 
-###Controllers
+## Controllers
 Generates a controller with a given name, will also generate a view and create a folder
 for you to put related .eex templates in. **Don't forget to add the controller in `routes.ex`**
 
@@ -41,7 +41,7 @@ Will give you the following functions by default:
 * `--skip-view` - doesn't create a view module
 * `--skip-template`- doesn't create a folder for templates
 
-###Channels
+## Channels
 Generates a channel with the given name. **Don't forget to add the channel to your router**
 
 ```bash
@@ -68,7 +68,7 @@ def handle_in("eventname", message, socket) do
 end
 ```
 
-###Models
+## Models
 Generates an [Ecto](https://github.com/elixir-lang/ecto) model with the given name and schema. **Requires ecto!**
 
 ```bash
@@ -80,7 +80,7 @@ Schema entries should be of the form `name:type` with types being defined by ect
 **Options**
 * `--timestamps` - adds ecto timestamps to your schema.
 
-###Migrations
+## Migrations
 **Assumes a valid repo module name of MyApp.Repo**
 
 Generates an [Ecto](https://github.com/elixir-lang/ecto) migration with the given name. **Requires ecto**
